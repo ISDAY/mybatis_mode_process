@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ccrt6.mapper.UserMapper">
+    <!-- 在这里面编写 sql语句 与 接口方法 的映射 -->
+    <!--<select>：表示这个操作是一个查询操作
+         属性id：表示的是要匹配的接口方法的名称
+         属性resultType：表示返回值的类型，对应接口方法的返回值类型。
+             查询操作完成后，mybatis会根据返回值类型，将数据封装成指定的对象。
+             这个步骤和jdbc中：根据结果集ResultSet中的数据封装成指定的对象 是一样的。
+         #{属性名}：获取接口中方法传递的实参，这里的属性名和接口方法的形参名保持一致，
+         否则就需要 进行其他的设置（后面会讲）。 -->
+
+    <select id="findUserById" resultType="com.ccrt6.bean.Userinfo">
+        select * from user where id = #{id}
+    </select>
+</mapper>
